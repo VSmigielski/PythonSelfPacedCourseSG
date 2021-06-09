@@ -107,16 +107,3 @@ class extract:
             else:
                 return dataset
                 break
-    
- 
-e = extract()
-dataset = e.fromCSV(file_path="delivery/delivery.csv")
-dataset1 = e.fromCSV(file_path="citigroup.csv")
-dataset2 = e.fromJSON(file_path="FileIO-DataFiles/prizes.json")
-dataset3 = e.fromExcel(file_path="citigroup.xlsx")
-
-# for row in dataset1:
-  #  print(row)
-    
-for row in dataset3:
-    print(row)
