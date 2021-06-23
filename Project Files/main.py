@@ -70,6 +70,11 @@ for size in dataset:
             fam_size[v] = val
         else:
             pass
+
+sorted = dict(sorted(fam_size.items()))    
+    
+x = sorted.keys()
+y = sorted.values()
         
 # Graph Chart Females/Males
 fem_male = list()
@@ -122,13 +127,13 @@ colors = ['#DDA0DD', '#90EE90', '#FFC0CB', 'lightskyblue']
 explode = (0, 0, 0, 0.15)
 
 # First histogram Male&Female counts
-axs[0, 0].hist(fem_male)
+axs[0, 0].hist(fem_male, color = "#AFF8D8", ec="#AFF8D8")
 
 # Second histogram Single, Married, Other counts
-axs[0, 1].hist(mar_stat)
+axs[0, 1].hist(mar_stat, color = "#97A2FF", ec="#97A2FF")
 
 # Line Graph Family Sizes and counts
-axs[1, 0].plot(x, y,color='#C20078', marker='o', linestyle='dashed') 
+axs[1, 0].plot(x, y,color='#C20078', marker='o', linestyle='solid') 
 axs[1, 0].set_title( 'Family Sizes vs Amount of Families' )
 axs[1, 0].xaxis.set_label_text( 'Family Size' )
 axs[1, 0].yaxis.set_label_text( 'Amount of Families' )
@@ -139,7 +144,7 @@ axs[1, 1].pie(percentage, explode=explode, labels=labels, colors=colors, autopct
 axs[1, 1].set_title( 'Age Group Percentage' )
 
 # Scatterplot Latitude/Longitude showing points of residence
-axs[2, 0].scatter(latitude, longitude)
+axs[2, 0].scatter(latitude, longitude, color='#7BD8F1')
 axs[2, 0].set_title( 'Latitude and Longitude' )
 axs[2, 0].xaxis.set_label_text( 'Latitude' )
 axs[2, 0].yaxis.set_label_text( 'Longitude' )
